@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/chatboticon1.png') }}">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <div class="topnav">
+        <a href="#home" class="active">HOME</a>
+        <button class="menu-icon" onclick="toggleMenu()">☰</button>
+    </div>
+
+    <!-- Menu Options -->
+    <div id="menuOptions" class="menu-container">
+        <a href="javascript:void(0);" onclick="location.reload();">New Conversation</a>
+        <a href="javascript:void(0);" onclick="clearChat();">Clear Chat</a>
+        <a href="javascript:void(0);" onclick="saveChat();">Save Chat</a>
+    </div>
+
+    <!-- Main Chat Container -->
+    <div id="main-container">
+        <div id="chatbox">
+            
+            <!-- Chat Header -->
+            <div id="chatHeader">AI Chatbot</div> 
+            
+            <!-- Messages Container -->
+            <div id="messagesContainer"></div>
+            
+            <!-- Typing Indicator -->
+            <div id="typingIndicator" class="message bot" style="display:none;">Bot is typing...</div>
+            
+            <!-- Input Field -->
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Type your message here...">
+                <button id="sendButton" aria-label="Send message">
+                    <i class="fa fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="{{ url_for('static', filename='js/Chatbot.js') }}"></script>
+</body>
+</html>
